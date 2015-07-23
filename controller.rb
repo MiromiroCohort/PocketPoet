@@ -3,46 +3,34 @@ class Controller
 	def initialize
 		@model = Model.new
 		@view = View.new
+		run
+	end
+
+	def run
+		run = @view.intro
 	end
 
 	def name(name)
+		#takes name and capitalizes and passes name to view
+		name = @model.name
 		name = name.capitalize!
 		@view(name)
 	end
 
 	def pick_poem
+		#PICKS poem from data base and passes it to view
 		poem = @model.pick_poem
-		@view.pick_poem(poem)
+		@view.poem(poem)
 	end
 
 	def question
+		#recieves new question from poem Specific to the poem
 		question = @model.question
 		@view.question(question)
 	end
 
-	def another_question
-		another_question = @model.another_question
-		@view.another_question(another_question)
+	def another_poem
+		another_poem = @model.another_poem
+		@view.another_poem?(another_poem)
 	end
-end#end of class
-
-
-
-
-
-
-
-	# def love_song
-	# 	love = @player.love_song
-	# 	@view.love_song(love)
-	# end
-
-	# def party_song
-	# 	party = @player.love_song
-	# 	@view.party_song(party)
-	# end
-
-	# def good_mood
-	# 	great = @player.good_mood
-	# 	@view.party_song(party)
-	# end
+end
