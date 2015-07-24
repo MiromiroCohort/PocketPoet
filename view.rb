@@ -1,3 +1,4 @@
+require 'mactts'
 class View
 
   def initialize
@@ -40,6 +41,9 @@ class View
     else
       display_question(sentence, content_type)
     end
+  end
+  def speak(string_to_speak)
+      Mac::TTS.say(string_to_speak, :alex)
   end
 
   def intro
