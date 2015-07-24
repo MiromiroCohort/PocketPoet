@@ -2,7 +2,7 @@ require 'mactts'
 class View
 
   def initialize
-    @screen = "**********************************************************************"
+    @screen = "                                                                                                "
     @question = "Would you like to hear a poem about "
   end
 
@@ -10,13 +10,12 @@ class View
     gets.chomp.downcase
   end
 
-  def display(content)
+  def clear_screen
     system 'clear'
-    puts @screen
-    10.times do puts "" end
+  end
+
+  def display(content)
     puts "#{content}"
-    10.times do puts "" end
-    puts @screen
   end
 
   def display_question(content, content_type)
@@ -24,15 +23,17 @@ class View
     puts @screen
     10.times do puts "" end
     puts "#{content}"
+    if content_type == "question" || content_type == "quit question"
       puts " "
-      puts "                            [y]    [n]"
+      puts "                                            [y]    [n]"
+    end
     10.times do puts "" end
     puts @screen
   end
 
   def content_centraliser(content, content_type)
     sentence = "#{content}"
-    until sentence.length >= 70
+    until sentence.length >= 100
       sentence << " "
       sentence.reverse!
       sentence << " "
@@ -49,19 +50,24 @@ class View
   end
 
   def intro
-    display("                         Welcome to Orator")
-    sleep(3)
+    content_centraliser("Welcome", "intro")
+    sleep(1)
+    content_centraliser("to", "intro")
+    sleep(1)
+    content_centraliser("ORATOR", "intro")
+    sleep(2)
   end
 
   def question(topic)
     question = "#{@question}#{topic}?"
     content_centraliser(question, "question")
+
   end
 
   def sentence(sentence)
     content_centraliser(sentence, "poem")
     speak(sentence)
-    sleep(0.2)
+    sleep(0.1)
   end
 
   def another_poem?

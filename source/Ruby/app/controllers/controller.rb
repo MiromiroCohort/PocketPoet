@@ -1,4 +1,4 @@
-require_relative '../../config/application'
+require_relative '../../config/application.rb'
 class Controller
 
 	def initialize
@@ -8,6 +8,7 @@ class Controller
 	end
 
 	def run
+		@view.clear_screen
 		@view.intro
 		pick_poem
 	end
@@ -34,17 +35,17 @@ class Controller
 		when "y"
 			slice_poem(poem)
 		when "n"
-			pick_poem
+			another_poem
 		end
 	end
 
 	def slice_poem(poem)
+		@view.clear_screen
 		sliced_poem = poem.poem_text.split("\n")
 		sliced_poem.each do |line|
 			@view.sentence(line)
-
-
 		end
+		@view.clear_screen
 		another_poem
 	end
 
@@ -52,7 +53,6 @@ class Controller
 		@view.another_poem?
 		answer = @view.ask
 		pick_poem if answer == 'y'
-
 	end
 end
 controller = Controller.new()
