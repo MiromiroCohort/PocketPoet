@@ -1,110 +1,71 @@
 require_relative '../config/application'
-poem1=Poem.create(:title => 'Caged Bird', :poet => 'Maya Angelou', :about => 'the desire for freedom')
-poem1.assign_attributes(:poem_text => "The free bird leaps
-on the back of the wind
-and floats downstream
-till the current ends
-and dips his wings
-in the orange sun rays
-and dares to claim the sky.
+poem1=Poem.create(:title => 'The Jabberwocky', :poet => 'Rudyard Kipling', :about => 'a monster')
+poem1.assign_attributes(:poem_text => "'Twas brillig, and the slithy toves
+Did gyre and gimble in the wabe:
+All mimsy were the borogoves,
+And the mome raths outgrabe.
 
-But a bird that stalks
-down his narrow cage
-can seldom see through
-his bars of rage
-his wings are clipped and
-his feet are tied
-so he opens his throat to sing.
+'Beware the Jabberwock, my son!
+The jaws that bite, the claws that catch!
+Beware the Jubjub bird, and shun
+The frumious Bandersnatch!'
 
-The caged bird sings
-with fearful trill
-of the things unknown
-but longed for still
-and his tune is heard
-on the distant hill
-for the caged bird
-sings of freedom
+He took his vorpal sword in hand:
+Long time the manxome foe he sought --
+So rested he by the Tumtum tree,
+And stood a while in thought.
 
-The free bird thinks of another breeze
-and the trade winds soft through the sighing trees
-and the fat worms waiting on a dawn-bright lawn
-and he names the sky his own.
+And, as in uffish thought he stood,
+The Jabberwock, with eyes of flame,
+Came whiffling through the tulgey wood,
+And burbled as it came!
 
-But a caged bird stands on the grave of dreams
-his shadow shouts on a nightmare scream
-his wings are clipped and his feet are tied
-so he opens his throat to sing
+One two! One two! And through and through
+The vorpal blade went snicker-snack!
+He left it dead, and with its head
+He went galumphing back.
 
-The caged bird sings
-with a fearful trill
-of things unknown
-but longed for still
-and his tune is heard
-on the distant hill
-for the caged bird
-sings of freedom. ")
+'And hast thou slain the Jabberwock?
+Come to my arms, my beamish boy!
+Oh frabjous day! Callooh! Callay!'
+He chortled in his joy.
+
+'Twas brillig, and the slithy toves
+Did gyre and gimble in the wabe:
+All mimsy were the borogoves,
+And the mome raths outgrabe. ")
 poem1.save
-poem1=Poem.create(:title => 'The Road Not Taken', :poet => 'Robert Frost', :about => 'hard decisions')
-poem1.assign_attributes(:poem_text => "Two roads diverged in a yellow wood,
-And sorry I could not travel both
-And be one traveler, long I stood
-And looked down one as far as I could
-To where it bent in the undergrowth;
+#second
+poem1=Poem.create(:about => 'walking a mile with sorrow and pleasure')
+poem1.assign_attributes(:poem_text => "I walked a mile with Pleasure
+She chatted all the way;
+But left me none the wiser
+For all she had to say.
 
-Then took the other, as just as fair,
-And having perhaps the better claim
-Because it was grassy and wanted wear,
-Though as for that the passing there
-Had worn them really about the same,
-
-And both that morning equally lay
-In leaves no step had trodden black.
-Oh, I kept the first for another day!
-Yet knowing how way leads on to way
-I doubted if I should ever come back.
-
-I shall be telling this with a sigh
-Somewhere ages and ages hence:
-Two roads diverged in a wood, and I,
-I took the one less traveled by,
-And that has made all the difference. ")
+I walked a mile with sorrow,
+And ne'er a word said she,
+But oh! The things I learned from her,
+When sorrow walked with me.   ")
 poem1.save
-poem1=Poem.create(:title => 'If', :poet => 'Rudyard Kipling', :about => 'hard decisions')
-poem1.assign_attributes(:poem_text =>"If you can keep your head when all about you
-Are losing theirs and blaming it on you;
-If you can trust yourself when all men doubt you,
-But make allowance for their doubting too:
-If you can wait and not be tired by waiting,
-Or, being lied about, don't deal in lies,
-Or being hated don't give way to hating,
-And yet don't look too good, nor talk too wise;
-
-If you can dream and not make dreams your master;
-If you can think and not make thoughts your aim,
-If you can meet with Triumph and Disaster
-And treat those two impostors just the same:.
-If you can bear to hear the truth you've spoken
-Twisted by knaves to make a trap for fools,
-Or watch the things you gave your life to, broken,
-And stoop and build'em up with worn-out tools;
-
-If you can make one heap of all your winnings
-And risk it on one turn of pitch-and-toss,
-And lose, and start again at your beginnings,
-And never breathe a word about your loss:
-If you can force your heart and nerve and sinew
-To serve your turn long after they are gone,
-And so hold on when there is nothing in you
-Except the Will which says to them: 'Hold on!'
-
-If you can talk with crowds and keep your virtue,
-Or walk with Kings nor lose the common touch,
-If neither foes nor loving friends can hurt you,
-If all men count with you, but none too much:
-If you can fill the unforgiving minute
-With sixty seconds' worth of distance run,
-Yours is the Earth and everything that's in it,
-And, which is more, you'll be a Man, my son!")
+poem1=Poem.create(:poet => 'Gandalf', :about => 'rings and kings')
+poem1.assign_attributes(:poem_text =>"All that is gold does not glitter;
+all that is long does not last;
+All that is old does not wither;
+not all that is over is past.
+Not all that have fallen are vanquished;
+a king may yet be without crown,
+A blade that was broken be brandished;
+and towers that were strong may fall down.")
+poem1.save
+poem1=Poem.create(:poet => 'Shel Silverstein', :about => 'skin')
+poem1.assign_attributes(:poem_text =>"She had blue skin.
+And so did he.
+He kept it hid
+And so did she.
+They searched for blue
+Their whole life through,
+Then passed right by –
+And never knew.")
 poem1.save
 
 
